@@ -1,0 +1,123 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base styles */
+html,
+body,
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.95);
+  color: rgba(250, 250, 250, 0.95);
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  place-items: center;
+}
+
+/* Typography */
+h1 {
+  font-family: Playfair;
+  font-size: 60px;
+}
+
+p {
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 36px;
+}
+
+span {
+  animation: flicker 3s infinite;
+  color: rgba(255, 215, 0, 0.95);
+  font-weight: 600;
+}
+
+/* Animation styles */
+.animated-element {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 1s ease-out, transform 0.5s ease-out;
+}
+
+.animated-element.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes flicker {
+
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    opacity: 1;
+  }
+
+  20%,
+  24%,
+  55% {
+    opacity: 0;
+  }
+}
+
+/* Layout adjustments */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0 auto;
+  max-width: 95ch;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 500px) {
+  .hero {
+    padding: 0;
+    text-align: left;
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+/* .underline {
+  position: relative;
+  overflow: hidden;
+}
+
+.underline::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgba(255, 215, 0, 0.95);
+}
+
+.underline-animation::after {
+  width: 100%;
+  transition: width 0.5s ease-out;
+} */
